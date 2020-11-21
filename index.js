@@ -1,8 +1,11 @@
 import express from 'express'
 import 'dotenv/config.js';
+import userRouter from './routers/userrouter.js'
 
 const app = express();
 const port = 3000;
+
+app.use('/api', userRouter)
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
